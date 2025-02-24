@@ -1,0 +1,54 @@
+<!-- home page, extends base.hmtl -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="mx-3"> Education</h2>
+            {% for edu in education %}
+            <div class="card my-3">
+                <div class="card-body">
+                    <p>{{ edu['content'] |safe }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="col">
+            <h2 class="mx-3"> Working</h2>
+            {% for edu in working %}
+            <div class="card my-3">
+                <div class="card-body">
+                    <p>{{ edu['content'] |safe }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div style="height: 300px; width:100%; background-color: aqua"></div>
+            </div>
+            <div class="carousel-item">
+                <div style="height: 300px; width:100%; background-color: red"></div>
+            </div>
+            <div class="carousel-item">
+                <div style="height: 300px; width:100%; background-color: green"></div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+{% endblock %}
